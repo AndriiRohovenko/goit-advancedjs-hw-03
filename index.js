@@ -14,5 +14,5 @@ import{i as c,S as l}from"./assets/vendor-B2mb6eXk.js";(function(){const s=docum
         <p class="image-info-text"><strong>Downloads</strong> <span>${t.downloads}</span></p>
       </div>
     </li>
-  `).join("");i.insertAdjacentHTML("beforeend",s)}const y=document.getElementById("search-form");y.addEventListener("submit",w);function w(o){o.preventDefault();const s=o.currentTarget.elements.query.value;g(s).then(t=>{console.log(t),d(t)})}
+  `).join("");i.innerHTML=s}const y=document.getElementById("search-form");y.addEventListener("submit",w);function w(o){o.preventDefault();const s=o.currentTarget.elements.query.value;g(s).then(t=>{console.log(t),d(t)})}
 //# sourceMappingURL=index.js.map
