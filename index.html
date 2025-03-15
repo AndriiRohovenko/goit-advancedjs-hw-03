@@ -6,9 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>HW-03</title>
     <script type="module" crossorigin src="/goit-advancedjs-hw-03/index.js"></script>
-    <link rel="stylesheet" crossorigin href="/goit-advancedjs-hw-03/assets/index-CGFXHSTe.css">
+    <link rel="stylesheet" crossorigin href="/goit-advancedjs-hw-03/assets/index-Z49QcXwE.css">
   </head>
   <body>
-    <p>lol kek</p>
+    <form id="search-form" class="search-container">
+      <input
+        type="text"
+        id="search-input"
+        name="query"
+        placeholder="Search images..."
+        required
+        minlength="2"
+      />
+      <button type="submit">Search</button>
+    </form>
+
+    <p class="loader" id="loader" hidden>Loading images, please wait...</p>
+
+    <div class="image-grid" id="image-container"></div>
   </body>
 </html>
