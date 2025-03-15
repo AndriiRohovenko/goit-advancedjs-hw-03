@@ -37,5 +37,5 @@ export function renderImageMarkup(images) {
     )
     .join('');
 
-  gallery.insertAdjacentHTML('beforeend', galleryMarkup);
+  gallery.innerHTML = galleryMarkup;
 }
