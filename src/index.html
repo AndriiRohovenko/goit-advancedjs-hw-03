@@ -8,7 +8,21 @@
     <link rel="stylesheet" href="./css/styles.css" />
   </head>
   <body>
-    <p>lol kek</p>
+    <form id="search-form" class="search-container">
+      <input
+        type="text"
+        id="search-input"
+        name="query"
+        placeholder="Search images..."
+        required
+        minlength="2"
+      />
+      <button type="submit">Search</button>
+    </form>
+
+    <p class="loader" id="loader" hidden>Loading images, please wait...</p>
+
+    <div class="image-grid" id="image-container"></div>
   </body>
   <script type="module" src="./main.js"></script>
 </html>
