@@ -15,6 +15,7 @@ function search_image(event) {
     loader.style.display = 'none';
     return;
   }
+  event.currentTarget.reset();
   fetchSearchData(search_phrase).then(data => {
     loader.style.display = 'none';
     renderImageMarkup(data);
