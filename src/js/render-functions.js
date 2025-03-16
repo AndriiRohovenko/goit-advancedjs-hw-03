@@ -36,5 +36,6 @@ export function renderImageMarkup(images) {
     .join('');
 
   gallery.innerHTML = galleryMarkup;
-  new SimpleLightbox('.gallery a', gallery_config);
+  const lightbox = new SimpleLightbox('.gallery a', gallery_config);
+  lightbox.refresh();
 }
