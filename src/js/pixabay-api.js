@@ -26,7 +26,7 @@ export function fetchSearchData(search_phrase) {
     .then(data => {
       if (!data.hits || data.hits.length === 0) {
         const errorText =
-          'Sorry, there are no images matching your search query. Please try again!';
+          '❌ Sorry, there are no images matching your search query. Please try again!';
         showError(errorText);
         throw new Error(errorText);
       }
@@ -35,11 +35,11 @@ export function fetchSearchData(search_phrase) {
     .catch(error => console.error('Error fetching data:', error));
 }
 
-function showError(errorText) {
+export function showError(errorText) {
   iziToast.show({
-    title: 'Error:',
+    title: '',
     message: errorText,
-    backgroundColor: 'red',
+    backgroundColor: '#FF5B61',
     titleColor: 'white',
     messageColor: 'white',
     position: 'topRight',
