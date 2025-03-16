@@ -6,10 +6,8 @@ const gallery_config = {
   captionsData: 'alt',
   captionDelay: 250,
 };
-const lightbox = new SimpleLightbox('.gallery a', gallery_config);
 
 export function renderImageMarkup(images) {
-  lightbox.refresh();
   if (!images || images.length === 0) {
     gallery.innerHTML = '';
     return;
@@ -38,4 +36,5 @@ export function renderImageMarkup(images) {
     .join('');
 
   gallery.innerHTML = galleryMarkup;
+  new SimpleLightbox('.gallery a', gallery_config);
 }

@@ -16,7 +16,6 @@ function search_image(event) {
     return;
   }
   fetchSearchData(search_phrase).then(data => {
-    console.log(data);
     loader.style.display = 'none';
     renderImageMarkup(data);
   });
