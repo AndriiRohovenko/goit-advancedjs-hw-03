@@ -14,5 +14,5 @@ import{i as u,S as f}from"./assets/vendor-B2mb6eXk.js";(function(){const s=docum
         <p class="image-info-text"><strong>Downloads</strong> <span>${r.downloads}</span></p>
       </div>
     </li>
-  `).join("");l.innerHTML=s,new f(".gallery a",d)}const y=document.getElementById("search-form");y.addEventListener("submit",w);const i=document.getElementById("loader");function w(o){o.preventDefault(),i.style.display="block";const s=o.currentTarget.elements.query.value;if(!s){c("The request cant be empty, please fill in the input value!"),i.style.display="none";return}h(s).then(r=>{i.style.display="none",m(r)})}
+  `).join("");l.innerHTML=s,new f(".gallery a",d)}const y=document.getElementById("search-form");y.addEventListener("submit",w);const i=document.getElementById("loader");function w(o){o.preventDefault(),i.style.display="block";const s=o.currentTarget.elements.query.value;if(!s){c("The request cant be empty, please fill in the input value!"),i.style.display="none";return}o.currentTarget.reset(),h(s).then(r=>{i.style.display="none",m(r)})}
 //# sourceMappingURL=index.js.map
