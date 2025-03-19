@@ -7,28 +7,29 @@ axios.defaults.baseURL = `https://pixabay.com/api/`;
 // need to remove it to env variables or secured storage
 export const API_KEY = '49355059-ef28fa3d6cd8d2c420ac797e4';
 
-export function fetchSearchData(search_phrase) {
+export async function fetchSearchData(search_phrase) {
   const request_options = {
-    key: API_KEY,
-    q: search_phrase,
-    image_type: 'photo',
-    orientation: 'horizontal',
-    safesearch: 'true',
+    params: {
+      key: API_KEY,
+      q: search_phrase,
+      image_type: 'photo',
+      orientation: 'horizontal',
+      safesearch: 'true',
+    },
   };
-  const queryParams = new URLSearchParams(request_options).toString();
-  const request_url = `?${queryParams}`;
-  return axios
-    .get(request_url)
-    .then(response => {
-      if (!response.data.hits || response.data.hits.length === 0) {
-        const errorText =
-          '❌ Sorry, there are no images matching your search query. Please try again!';
-        showError(errorText);
-        throw new Error(errorText);
-      }
-      return response.data.hits;
-    })
-    .catch(error => console.error('Error fetching data:', error));
+  const response_data = (await axios.get('', request_options)).data.hits;
+  try {
+    if (!response_data || response_data.length === 0) {
+      const errorText =
+        '❌ Sorry, there are no images matching your search query. Please try again!';
+      showError(errorText);
+      throw new Error(errorText);
+    }
+    return response_data;
+  } catch {
+    console.error('Error fetching data:', error);
+    throw error;
+  }
 }
 
 export function showError(errorText) {
